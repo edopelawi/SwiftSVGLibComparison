@@ -7,19 +7,21 @@
 //
 
 import UIKit
+import SwiftSVG
 
 class ViewController: UIViewController {
 
+	@IBOutlet private weak var svgView: SVGView!
+
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		// Do any additional setup after loading the view, typically from a nib.
+		loadSVG()
 	}
 
-	override func didReceiveMemoryWarning() {
-		super.didReceiveMemoryWarning()
-		// Dispose of any resources that can be recreated.
+	private func loadSVG() {
+		// TODO: Somehow, this part due to SVGView's rendering process. Try to uncomment this line when we changed the library version.
+		// svgView.SVGName = "insurance"
 	}
-
 
 }
 
