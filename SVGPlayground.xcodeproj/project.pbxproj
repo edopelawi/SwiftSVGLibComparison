@@ -56,15 +56,23 @@
 		8D1A5D0720EC7E390065BE26 /* SVGPlayground */ = {
 			isa = PBXGroup;
 			children = (
+				8D75D6C220ECBC09005DE280 /* Resources */,
 				8D1A5D0820EC7E390065BE26 /* AppDelegate.swift */,
 				8D1A5D0A20EC7E390065BE26 /* ViewController.swift */,
 				8D1A5D0C20EC7E390065BE26 /* Main.storyboard */,
-				8D1A5D0F20EC7E3A0065BE26 /* Assets.xcassets */,
 				8D1A5D1120EC7E3A0065BE26 /* LaunchScreen.storyboard */,
-				8D1A5D1420EC7E3A0065BE26 /* Info.plist */,
 				8D1A5D1A20EC86650065BE26 /* URLConstants.swift */,
 			);
 			path = SVGPlayground;
+			sourceTree = "<group>";
+		};
+		8D75D6C220ECBC09005DE280 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8D1A5D1420EC7E3A0065BE26 /* Info.plist */,
+				8D1A5D0F20EC7E3A0065BE26 /* Assets.xcassets */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -286,7 +294,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GX458V4RKG;
-				INFOPLIST_FILE = SVGPlayground/Info.plist;
+				INFOPLIST_FILE = SVGPlayground/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -304,7 +312,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GX458V4RKG;
-				INFOPLIST_FILE = SVGPlayground/Info.plist;
+				INFOPLIST_FILE = SVGPlayground/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
