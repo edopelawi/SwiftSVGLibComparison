@@ -14,7 +14,26 @@
 		8D1A5D1320EC7E3A0065BE26 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D1A5D1120EC7E3A0065BE26 /* LaunchScreen.storyboard */; };
 		8D1A5D1B20EC86650065BE26 /* URLConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1A5D1A20EC86650065BE26 /* URLConstants.swift */; };
 		8D75D6C420ECBCD6005DE280 /* insurance.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8D75D6C320ECBCD6005DE280 /* insurance.svg */; };
+		8D75D6CF20ECBD81005DE280 /* Macaw.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D75D6C720ECBD65005DE280 /* Macaw.framework */; };
+		8D75D6D020ECBD81005DE280 /* Macaw.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8D75D6C720ECBD65005DE280 /* Macaw.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8D75D6D120ECBD81005DE280 /* SwiftSVG.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D75D6C620ECBD65005DE280 /* SwiftSVG.framework */; };
+		8D75D6D220ECBD81005DE280 /* SwiftSVG.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8D75D6C620ECBD65005DE280 /* SwiftSVG.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		8D75D6D320ECBD81005DE280 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				8D75D6D020ECBD81005DE280 /* Macaw.framework in Embed Frameworks */,
+				8D75D6D220ECBD81005DE280 /* SwiftSVG.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		8D1A5D0520EC7E390065BE26 /* SVGPlayground.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SVGPlayground.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -26,6 +45,8 @@
 		8D1A5D1420EC7E3A0065BE26 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D1A5D1A20EC86650065BE26 /* URLConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLConstants.swift; sourceTree = "<group>"; };
 		8D75D6C320ECBCD6005DE280 /* insurance.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = insurance.svg; sourceTree = "<group>"; };
+		8D75D6C620ECBD65005DE280 /* SwiftSVG.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftSVG.framework; path = Carthage/Build/iOS/SwiftSVG.framework; sourceTree = "<group>"; };
+		8D75D6C720ECBD65005DE280 /* Macaw.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Macaw.framework; path = Carthage/Build/iOS/Macaw.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +54,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D75D6CF20ECBD81005DE280 /* Macaw.framework in Frameworks */,
+				8D75D6D120ECBD81005DE280 /* SwiftSVG.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +67,7 @@
 			children = (
 				8D1A5D0720EC7E390065BE26 /* SVGPlayground */,
 				8D1A5D0620EC7E390065BE26 /* Products */,
+				8D75D6C520ECBD4D005DE280 /* Carthage Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -78,6 +102,15 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		8D75D6C520ECBD4D005DE280 /* Carthage Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8D75D6C720ECBD65005DE280 /* Macaw.framework */,
+				8D75D6C620ECBD65005DE280 /* SwiftSVG.framework */,
+			);
+			name = "Carthage Frameworks";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -88,6 +121,7 @@
 				8D1A5D0120EC7E390065BE26 /* Sources */,
 				8D1A5D0220EC7E390065BE26 /* Frameworks */,
 				8D1A5D0320EC7E390065BE26 /* Resources */,
+				8D75D6D320ECBD81005DE280 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -298,6 +332,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GX458V4RKG;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = SVGPlayground/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -316,6 +354,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GX458V4RKG;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = SVGPlayground/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
