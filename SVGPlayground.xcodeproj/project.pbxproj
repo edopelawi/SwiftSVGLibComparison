@@ -18,6 +18,8 @@
 		8D75D6D020ECBD81005DE280 /* Macaw.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8D75D6C720ECBD65005DE280 /* Macaw.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8D75D6D120ECBD81005DE280 /* SwiftSVG.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D75D6C620ECBD65005DE280 /* SwiftSVG.framework */; };
 		8D75D6D220ECBD81005DE280 /* SwiftSVG.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8D75D6C620ECBD65005DE280 /* SwiftSVG.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8DF2386520EDC39800B6958C /* MacawSVGCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF2386320EDC39800B6958C /* MacawSVGCell.swift */; };
+		8DF2386620EDC39800B6958C /* MacawSVGCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DF2386420EDC39800B6958C /* MacawSVGCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -47,6 +49,8 @@
 		8D75D6C320ECBCD6005DE280 /* insurance.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = insurance.svg; sourceTree = "<group>"; };
 		8D75D6C620ECBD65005DE280 /* SwiftSVG.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftSVG.framework; path = Carthage/Build/iOS/SwiftSVG.framework; sourceTree = "<group>"; };
 		8D75D6C720ECBD65005DE280 /* Macaw.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Macaw.framework; path = Carthage/Build/iOS/Macaw.framework; sourceTree = "<group>"; };
+		8DF2386320EDC39800B6958C /* MacawSVGCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacawSVGCell.swift; sourceTree = "<group>"; };
+		8DF2386420EDC39800B6958C /* MacawSVGCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MacawSVGCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +86,7 @@
 		8D1A5D0720EC7E390065BE26 /* SVGPlayground */ = {
 			isa = PBXGroup;
 			children = (
+				8DF2386220EDC36300B6958C /* TableViewCells */,
 				8D75D6C220ECBC09005DE280 /* Resources */,
 				8D1A5D0820EC7E390065BE26 /* AppDelegate.swift */,
 				8D1A5D0A20EC7E390065BE26 /* ViewController.swift */,
@@ -109,6 +114,15 @@
 				8D75D6C620ECBD65005DE280 /* SwiftSVG.framework */,
 			);
 			name = "Carthage Frameworks";
+			sourceTree = "<group>";
+		};
+		8DF2386220EDC36300B6958C /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				8DF2386320EDC39800B6958C /* MacawSVGCell.swift */,
+				8DF2386420EDC39800B6958C /* MacawSVGCell.xib */,
+			);
+			path = TableViewCells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -174,6 +188,7 @@
 				8D1A5D1020EC7E3A0065BE26 /* Assets.xcassets in Resources */,
 				8D1A5D0E20EC7E390065BE26 /* Main.storyboard in Resources */,
 				8D75D6C420ECBCD6005DE280 /* insurance.svg in Resources */,
+				8DF2386620EDC39800B6958C /* MacawSVGCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -186,6 +201,7 @@
 			files = (
 				8D1A5D1B20EC86650065BE26 /* URLConstants.swift in Sources */,
 				8D1A5D0B20EC7E390065BE26 /* ViewController.swift in Sources */,
+				8DF2386520EDC39800B6958C /* MacawSVGCell.swift in Sources */,
 				8D1A5D0920EC7E390065BE26 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
