@@ -20,6 +20,8 @@
 		8D75D6D220ECBD81005DE280 /* SwiftSVG.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8D75D6C620ECBD65005DE280 /* SwiftSVG.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8DF2386520EDC39800B6958C /* MacawSVGCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF2386320EDC39800B6958C /* MacawSVGCell.swift */; };
 		8DF2386620EDC39800B6958C /* MacawSVGCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DF2386420EDC39800B6958C /* MacawSVGCell.xib */; };
+		8DF2386920EDC5B900B6958C /* SwiftSVGCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF2386720EDC5B900B6958C /* SwiftSVGCell.swift */; };
+		8DF2386A20EDC5B900B6958C /* SwiftSVGCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DF2386820EDC5B900B6958C /* SwiftSVGCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -51,6 +53,8 @@
 		8D75D6C720ECBD65005DE280 /* Macaw.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Macaw.framework; path = Carthage/Build/iOS/Macaw.framework; sourceTree = "<group>"; };
 		8DF2386320EDC39800B6958C /* MacawSVGCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacawSVGCell.swift; sourceTree = "<group>"; };
 		8DF2386420EDC39800B6958C /* MacawSVGCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MacawSVGCell.xib; sourceTree = "<group>"; };
+		8DF2386720EDC5B900B6958C /* SwiftSVGCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftSVGCell.swift; sourceTree = "<group>"; };
+		8DF2386820EDC5B900B6958C /* SwiftSVGCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SwiftSVGCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +125,8 @@
 			children = (
 				8DF2386320EDC39800B6958C /* MacawSVGCell.swift */,
 				8DF2386420EDC39800B6958C /* MacawSVGCell.xib */,
+				8DF2386720EDC5B900B6958C /* SwiftSVGCell.swift */,
+				8DF2386820EDC5B900B6958C /* SwiftSVGCell.xib */,
 			);
 			path = TableViewCells;
 			sourceTree = "<group>";
@@ -184,6 +190,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8DF2386A20EDC5B900B6958C /* SwiftSVGCell.xib in Resources */,
 				8D1A5D1320EC7E3A0065BE26 /* LaunchScreen.storyboard in Resources */,
 				8D1A5D1020EC7E3A0065BE26 /* Assets.xcassets in Resources */,
 				8D1A5D0E20EC7E390065BE26 /* Main.storyboard in Resources */,
@@ -203,6 +210,7 @@
 				8D1A5D0B20EC7E390065BE26 /* ViewController.swift in Sources */,
 				8DF2386520EDC39800B6958C /* MacawSVGCell.swift in Sources */,
 				8D1A5D0920EC7E390065BE26 /* AppDelegate.swift in Sources */,
+				8DF2386920EDC5B900B6958C /* SwiftSVGCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
