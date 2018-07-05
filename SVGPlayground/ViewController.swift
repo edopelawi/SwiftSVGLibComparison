@@ -51,7 +51,7 @@ extension ViewController: UITableViewDataSource {
 
 		switch validSection {
 		case .macaw:
-			return 1
+			return 100
 
 		case .swiftSVG:
 			return 0 // TODO: There's an issue in SwiftSVG rendering, so we're not using it for the time being.
@@ -109,10 +109,10 @@ extension ViewController: UITableViewDelegate {
 
 		switch validSection {
 		case .macaw:
-			return "Macaw"
+			return "Macaw Renderers"
 
 		case .swiftSVG:
-			return "Swift SVG"
+			return "Swift SVG Renderers"
 		}
 	}
 
