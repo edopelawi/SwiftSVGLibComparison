@@ -8,10 +8,12 @@
 
 import UIKit
 import SwiftSVG
+import Macaw
 
 class ViewController: UIViewController {
 
-	@IBOutlet private weak var svgView: SVGView!
+	@IBOutlet private weak var swiftSVGView: SwiftSVG.SVGView!
+	@IBOutlet private weak var macawSVGView: Macaw.SVGView!
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -19,8 +21,11 @@ class ViewController: UIViewController {
 	}
 
 	private func loadSVG() {
+
 		// TODO: Somehow, this part due to SVGView's rendering process. Try to uncomment this line when we changed the library version.
-		// svgView.SVGName = "insurance"
+		// swiftSVGView.SVGName = "insurance"
+
+		macawSVGView.fileName = "insurance"
 	}
 
 }
