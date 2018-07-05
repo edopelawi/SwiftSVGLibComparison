@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -25,51 +24,28 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SwiftSVG:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3pO-eM-oMI">
-                                <rect key="frame" x="16" y="107.5" width="81" height="21"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Macaw:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wx6-K1-rwR">
-                                <rect key="frame" x="16" y="195" width="62" height="21"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7aR-fI-hI9" customClass="SVGView" customModule="SwiftSVG">
-                                <rect key="frame" x="295" y="86" width="64" height="64"/>
-                                <color key="backgroundColor" red="1" green="0.49327188729999999" blue="0.47399842739999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="64" id="PlG-EP-nIN"/>
-                                    <constraint firstAttribute="width" secondItem="7aR-fI-hI9" secondAttribute="height" multiplier="1:1" id="ytU-vK-U7r"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nzB-tU-RkD" customClass="SVGView" customModule="Macaw">
-                                <rect key="frame" x="295" y="173" width="64" height="64"/>
-                                <color key="backgroundColor" red="0.20000000000000001" green="0.72549019609999998" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vJ4-qD-djN">
+                                <rect key="frame" x="16" y="86" width="343" height="565"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="ac8-4W-7tc"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="ATT-cr-hAQ"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="wx6-K1-rwR" firstAttribute="centerY" secondItem="nzB-tU-RkD" secondAttribute="centerY" id="3F7-ix-K5A"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="swp-UJ-Q0K" secondAttribute="top" constant="-16" id="6w9-et-diG"/>
-                            <constraint firstItem="3pO-eM-oMI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="7r3-bo-g3x"/>
-                            <constraint firstItem="nzB-tU-RkD" firstAttribute="top" secondItem="7aR-fI-hI9" secondAttribute="bottom" constant="23" id="8nV-RG-exN"/>
-                            <constraint firstItem="nzB-tU-RkD" firstAttribute="trailing" secondItem="7aR-fI-hI9" secondAttribute="trailing" id="I3x-fp-apS"/>
-                            <constraint firstItem="nzB-tU-RkD" firstAttribute="width" secondItem="7aR-fI-hI9" secondAttribute="width" id="RMJ-kP-yO1"/>
-                            <constraint firstItem="7aR-fI-hI9" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-16" id="UO5-kh-ncZ"/>
+                            <constraint firstItem="vJ4-qD-djN" firstAttribute="top" secondItem="swp-UJ-Q0K" secondAttribute="bottom" constant="16" id="DpS-62-hLv"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="leading" secondItem="vJ4-qD-djN" secondAttribute="leading" constant="-16" id="QHU-fm-Lfh"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="vJ4-qD-djN" secondAttribute="trailing" constant="16" id="ToR-Ha-MsC"/>
                             <constraint firstItem="swp-UJ-Q0K" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="avv-6j-8bq"/>
-                            <constraint firstItem="nzB-tU-RkD" firstAttribute="height" secondItem="7aR-fI-hI9" secondAttribute="height" id="d22-Vn-g9R"/>
-                            <constraint firstItem="3pO-eM-oMI" firstAttribute="centerY" secondItem="7aR-fI-hI9" secondAttribute="centerY" id="eB8-TF-97r"/>
-                            <constraint firstItem="7aR-fI-hI9" firstAttribute="top" secondItem="swp-UJ-Q0K" secondAttribute="bottom" constant="16" id="l58-5t-OZ2"/>
-                            <constraint firstItem="wx6-K1-rwR" firstAttribute="leading" secondItem="3pO-eM-oMI" secondAttribute="leading" id="w1n-BQ-zv5"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="vJ4-qD-djN" secondAttribute="bottom" constant="16" id="nWP-vi-l0q"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="macawSVGView" destination="nzB-tU-RkD" id="jdl-fB-aHb"/>
-                        <outlet property="swiftSVGView" destination="7aR-fI-hI9" id="bZG-23-pJr"/>
+                        <outlet property="tableView" destination="vJ4-qD-djN" id="pcL-Js-KAX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
