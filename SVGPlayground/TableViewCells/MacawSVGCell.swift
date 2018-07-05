@@ -18,6 +18,11 @@ final class MacawSVGCell: UITableViewCell {
 
 	@IBOutlet private weak var explanationLabel: UILabel!
 
+	override func prepareForReuse() {
+		explanationLabel.text = "Macaw:"
+		macawSVGView.fileName = nil
+	}
+
 	/**
 	Configures this cell to display the passed `filename`, without the file format (`.svg`).
 	*/

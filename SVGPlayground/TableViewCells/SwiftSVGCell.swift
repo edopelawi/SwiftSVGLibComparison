@@ -17,6 +17,11 @@ final class SwiftSVGCell: UITableViewCell {
 	@IBOutlet private weak var swiftSVGView: SwiftSVG.SVGView!
 	@IBOutlet private weak var explanationLabel: UILabel!
 
+	override func prepareForReuse() {
+		explanationLabel.text = "SwiftSVG:"
+		swiftSVGView.SVGName = nil
+	}
+
 	/**
 	Configures this cell to display the passed `filename`, without the file format (`.svg`).
 	*/
