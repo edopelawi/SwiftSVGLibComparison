@@ -27,19 +27,20 @@
                             <constraint firstAttribute="width" secondItem="sl4-NI-0ig" secondAttribute="height" multiplier="1:1" id="28d-hE-khj"/>
                         </constraints>
                     </view>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Macaw Remote:" textAlignment="natural" lineBreakMode="middleTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3oj-7K-Uau">
-                        <rect key="frame" x="16" y="11.5" width="253" height="20.5"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Macaw Remote:" textAlignment="natural" lineBreakMode="middleTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3oj-7K-Uau">
+                        <rect key="frame" x="16" y="8" width="253" height="27.5"/>
                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="3oj-7K-Uau" firstAttribute="bottom" secondItem="sl4-NI-0ig" secondAttribute="bottom" id="AJh-Et-mZ1"/>
                     <constraint firstItem="sl4-NI-0ig" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="EfI-Ml-4kq"/>
+                    <constraint firstItem="3oj-7K-Uau" firstAttribute="top" secondItem="sl4-NI-0ig" secondAttribute="top" id="TWb-ZJ-Mgi"/>
                     <constraint firstAttribute="bottom" secondItem="sl4-NI-0ig" secondAttribute="bottom" constant="8" id="UII-RJ-Aa6"/>
                     <constraint firstItem="sl4-NI-0ig" firstAttribute="leading" secondItem="3oj-7K-Uau" secondAttribute="trailing" constant="16" id="Ui2-gW-GQR"/>
                     <constraint firstAttribute="trailing" secondItem="sl4-NI-0ig" secondAttribute="trailing" constant="8" id="kvw-wh-qBA"/>
-                    <constraint firstItem="3oj-7K-Uau" firstAttribute="centerY" secondItem="sl4-NI-0ig" secondAttribute="centerY" id="oFm-UB-gFd"/>
                     <constraint firstItem="3oj-7K-Uau" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="vVR-oa-0oD"/>
                 </constraints>
             </tableViewCellContentView>

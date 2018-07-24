@@ -27,18 +27,19 @@
                             <constraint firstAttribute="width" secondItem="7j8-Lg-DFL" secondAttribute="height" multiplier="1:1" id="MeL-eO-byW"/>
                         </constraints>
                     </view>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SwiftSVG:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MT9-58-Rex">
-                        <rect key="frame" x="16" y="24" width="226.5" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="SwiftSVG:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MT9-58-Rex">
+                        <rect key="frame" x="16" y="8" width="226.5" height="53.5"/>
                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="MT9-58-Rex" firstAttribute="bottom" secondItem="7j8-Lg-DFL" secondAttribute="bottom" id="L3d-lI-3d5"/>
                     <constraint firstItem="MT9-58-Rex" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="S5N-ne-jtk"/>
+                    <constraint firstItem="MT9-58-Rex" firstAttribute="top" secondItem="7j8-Lg-DFL" secondAttribute="top" id="eti-JF-OqB"/>
                     <constraint firstAttribute="trailing" secondItem="7j8-Lg-DFL" secondAttribute="trailing" constant="8" id="glc-Cj-HWq"/>
                     <constraint firstItem="7j8-Lg-DFL" firstAttribute="leading" secondItem="MT9-58-Rex" secondAttribute="trailing" constant="16" id="hlf-Rj-qWK"/>
-                    <constraint firstItem="MT9-58-Rex" firstAttribute="centerY" secondItem="7j8-Lg-DFL" secondAttribute="centerY" id="o9K-1M-NoP"/>
                     <constraint firstAttribute="bottom" secondItem="7j8-Lg-DFL" secondAttribute="bottom" constant="8" id="rDq-Wm-gbn"/>
                     <constraint firstItem="7j8-Lg-DFL" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="yGd-nM-96G"/>
                 </constraints>
