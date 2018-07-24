@@ -60,7 +60,7 @@ extension ViewController: UITableViewDataSource {
 			return 0 // TODO: There's an issue in SwiftSVG rendering, so we're not using it for the time being.
 
 		case .macawRemote:
-			return 2
+			return 10
 		}
 	}
 
