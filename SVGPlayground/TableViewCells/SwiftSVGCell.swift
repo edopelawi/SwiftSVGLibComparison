@@ -21,12 +21,16 @@ final class SwiftSVGCell: UITableViewCell {
 		explanationLabel.text = "SwiftSVG:"
 		swiftSVGView.SVGName = nil
 	}
+}
+
+extension SwiftSVGCell: SVGCell {
 
 	/**
 	Configures this cell to display the passed `filename`, without the file format (`.svg`).
 	*/
-	func configure(for filename: String) {
-		explanationLabel.text = "SwiftSVG: \(filename)"
-		swiftSVGView.SVGName = filename
+	func configure(for source: String) {
+		explanationLabel.text = "SwiftSVG: \(source)"
+		swiftSVGView.SVGName = source
 	}
+
 }

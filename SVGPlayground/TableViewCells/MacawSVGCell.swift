@@ -23,11 +23,15 @@ final class MacawSVGCell: UITableViewCell {
 		macawSVGView.fileName = nil
 	}
 
+}
+
+extension MacawSVGCell: SVGCell {
+
 	/**
 	Configures this cell to display the passed `filename`, without the file format (`.svg`).
 	*/
-	func configure(for filename: String) {
-		explanationLabel.text = "Macaw: \(filename)"
-		macawSVGView.fileName = filename
+	func configure(for source: String) {
+		explanationLabel.text = "Macaw: \(source)"
+		macawSVGView.fileName = source
 	}
 }

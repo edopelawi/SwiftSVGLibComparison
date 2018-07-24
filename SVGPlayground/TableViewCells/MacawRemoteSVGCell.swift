@@ -23,21 +23,25 @@ final class MacawRemoteSVGCell: UITableViewCell {
 		macawView.backgroundColor = UIColor.darkGray
 	}
 
+}
+
+extension MacawRemoteSVGCell: SVGCell {
+
 	/**
 	Configures this URL to display SVG image from the passed URL.
 	*/
-	func configure(for urlString: String) {
-		explanationLabel.text = "Macaw remote: \(urlString)"
+	func configure(for source: String) {
+		explanationLabel.text = "Macaw remote: \(source)"
 
 		DispatchQueue.global(qos: .default).async { [weak self] in
 
-			self?.downloadSVG(urlString: urlString) { (svgString: String?) in
+			self?.downloadSVG(urlString: source) { (svgString: String?) in
 
 				guard let validString = svgString,
 					let node = try? SVGParser.parse(text: validString) else {
-					return
+						return
 				}
-				
+
 				DispatchQueue.main.async {
 					self?.macawView.node = node
 				}
