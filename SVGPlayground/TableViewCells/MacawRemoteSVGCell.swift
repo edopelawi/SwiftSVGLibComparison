@@ -17,11 +17,9 @@ final class MacawRemoteSVGCell: UITableViewCell {
 	@IBOutlet private weak var explanationLabel: UILabel!
 	@IBOutlet private weak var macawView: MacawView!
 
-	override func prepareForReuse() {
-		// TODO: Add code to cancel current download task for the passed URL.
-		explanationLabel.text = "Macaw remote:"
-		macawView.backgroundColor = UIColor.darkGray
-	}
+	private var latestSVGPath: String?
+	private var currentDataTask: URLSessionDataTask?
+	private var currentDispatchItem: DispatchWorkItem?
 
 }
 
@@ -31,9 +29,41 @@ extension MacawRemoteSVGCell: SVGCell {
 	Configures this URL to display SVG image from the passed URL.
 	*/
 	func configure(for source: String) {
+
+		guard source != latestSVGPath else {
+			return
+		}
+
+		resetNode()
+		resetDispatchWorkItems()
+
+		latestSVGPath = source
 		explanationLabel.text = "Macaw remote: \(source)"
 
-		DispatchQueue.global(qos: .default).async { [weak self] in
+		let workItem = createWorkItem(forDisplaying: source)
+		
+		DispatchQueue.global(qos: .default).async(execute: workItem)
+		currentDispatchItem = workItem
+	}
+
+	// MARK: - Private methods
+
+
+	private func resetNode() {
+		macawView.node = Group()
+	}
+
+	private func resetDispatchWorkItems() {
+		currentDataTask?.cancel()
+		currentDataTask = nil
+
+		currentDispatchItem?.cancel()
+		currentDispatchItem = nil
+	}
+
+	private func createWorkItem(forDisplaying source: String) -> DispatchWorkItem {
+
+		return DispatchWorkItem() { [weak self] in
 
 			self?.downloadSVG(urlString: source) { (svgString: String?) in
 
@@ -49,8 +79,6 @@ extension MacawRemoteSVGCell: SVGCell {
 		}
 	}
 
-	// MARK: - Private methods
-
 	private func downloadSVG(urlString: String, onFinished: @escaping ((_ svgString: String?) -> ())) {
 
 		guard let url = URL(string: urlString) else {
@@ -59,7 +87,7 @@ extension MacawRemoteSVGCell: SVGCell {
 
 		let session = URLSession(configuration: .default)
 
-		session.dataTask(with: url) { (data: Data?, urlResponse: URLResponse?, error: Error?) in
+		currentDataTask = session.dataTask(with: url) { (data: Data?, urlResponse: URLResponse?, error: Error?) in
 
 			guard let validData = data else {
 
@@ -70,6 +98,7 @@ extension MacawRemoteSVGCell: SVGCell {
 			let svgString = String(data: validData, encoding: .utf8)
 			onFinished(svgString)
 		}
-		.resume()
+
+		currentDataTask?.resume()
 	}
 }
