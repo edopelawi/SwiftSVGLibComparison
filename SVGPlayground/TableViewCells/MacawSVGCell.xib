@@ -24,8 +24,8 @@
                         <rect key="frame" x="242.5" y="8" width="69.5" height="53.5"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Macaw:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="azL-Gw-Onh">
-                        <rect key="frame" x="16" y="24" width="210.5" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Macaw:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="azL-Gw-Onh">
+                        <rect key="frame" x="16" y="8" width="210.5" height="53.5"/>
                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -33,10 +33,11 @@
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="0hp-b8-fgr" secondAttribute="bottom" constant="8" id="5TT-Sh-ZIK"/>
-                    <constraint firstItem="azL-Gw-Onh" firstAttribute="centerY" secondItem="0hp-b8-fgr" secondAttribute="centerY" id="96Y-8A-aXH"/>
                     <constraint firstItem="0hp-b8-fgr" firstAttribute="leading" secondItem="azL-Gw-Onh" secondAttribute="trailing" constant="16" id="EBI-Y0-YSK"/>
+                    <constraint firstItem="azL-Gw-Onh" firstAttribute="bottom" secondItem="0hp-b8-fgr" secondAttribute="bottom" id="I67-tg-Mm3"/>
                     <constraint firstItem="0hp-b8-fgr" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="Pba-E8-Nga"/>
                     <constraint firstItem="azL-Gw-Onh" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="QNC-EZ-1oH"/>
+                    <constraint firstItem="azL-Gw-Onh" firstAttribute="top" secondItem="0hp-b8-fgr" secondAttribute="top" id="SWZ-zB-lGC"/>
                     <constraint firstAttribute="trailing" secondItem="0hp-b8-fgr" secondAttribute="trailing" constant="8" id="azs-CD-lcJ"/>
                     <constraint firstItem="0hp-b8-fgr" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="height" multiplier="1:1" id="eB7-Ef-A8a"/>
                 </constraints>

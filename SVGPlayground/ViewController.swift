@@ -17,6 +17,7 @@ final class ViewController: UIViewController {
 	enum Section: Int {
 		case macaw = 0
 		case swiftSVG
+		case macawRemote
 	}
 
 	override func viewDidLoad() {
@@ -28,9 +29,11 @@ final class ViewController: UIViewController {
 
 		let macawNib = UINib(nibName: MacawSVGCell.reuseIdentifier, bundle: Bundle.main)
 		let swiftSVGNib = UINib(nibName: SwiftSVGCell.reuseIdentifier, bundle: Bundle.main)
+		let macawRemoteNib = UINib(nibName: MacawRemoteSVGCell.reuseIdentifier, bundle: Bundle.main)
 
 		tableView.register(macawNib, forCellReuseIdentifier: MacawSVGCell.reuseIdentifier)
 		tableView.register(swiftSVGNib, forCellReuseIdentifier: SwiftSVGCell.reuseIdentifier)
+		tableView.register(macawRemoteNib, forCellReuseIdentifier: MacawRemoteSVGCell.reuseIdentifier)
 	}
 
 }
@@ -40,7 +43,7 @@ final class ViewController: UIViewController {
 extension ViewController: UITableViewDataSource {
 
 	func numberOfSections(in tableView: UITableView) -> Int {
-		return 2
+		return 3
 	}
 
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -51,10 +54,13 @@ extension ViewController: UITableViewDataSource {
 
 		switch validSection {
 		case .macaw:
-			return 100
+			return 10
 
 		case .swiftSVG:
 			return 0 // TODO: There's an issue in SwiftSVG rendering, so we're not using it for the time being.
+
+		case .macawRemote:
+			return 10
 		}
 	}
 
@@ -76,8 +82,12 @@ extension ViewController: UITableViewDataSource {
 		switch validSection {
 		case .macaw:
 			return MacawSVGCell.reuseIdentifier
+
 		case .swiftSVG:
 			return SwiftSVGCell.reuseIdentifier
+
+		case .macawRemote:
+			return MacawRemoteSVGCell.reuseIdentifier
 		}
 	}
 
@@ -93,6 +103,9 @@ extension ViewController: UITableViewDataSource {
 
 		case .swiftSVG:
 			return SwiftSVGCell.preferredHeight
+
+		case .macawRemote:
+			return MacawRemoteSVGCell.preferredHeight
 		}
 	}
 }
@@ -113,17 +126,36 @@ extension ViewController: UITableViewDelegate {
 
 		case .swiftSVG:
 			return "Swift SVG Renderers"
+
+		case .macawRemote:
+			return "Macaw Renderer + Remote loading"
 		}
 	}
 
 	func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
 
-		// TODO: We could make this better by making a protocol out of it.
+		guard let svgCell = cell as? SVGCell,
+			let section = Section(rawValue: indexPath.section) else {
+				return
+		}
 
-		if let macawCell = cell as? MacawSVGCell {
-			macawCell.configure(for: "insurance")
-		} else if let swiftSVGCell = cell as? SwiftSVGCell {
-			swiftSVGCell.configure(for: "insurance")
+		let oddRow = (indexPath.row % 2) != 0
+
+		switch section {
+		case .macaw, .swiftSVG:
+			svgCell.configure(for: "insurance")
+
+		case .macawRemote:
+
+			let url: String
+
+			if oddRow {
+				url = "https://dev.w3.org/SVG/tools/svgweb/samples/svg-files/adobe.svg"
+			} else {
+				url = "https://dev.w3.org/SVG/tools/svgweb/samples/svg-files/betterplace.svg"
+			}
+
+			svgCell.configure(for: url)
 		}
 	}
 
