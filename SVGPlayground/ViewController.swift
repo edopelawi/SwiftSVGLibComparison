@@ -134,16 +134,28 @@ extension ViewController: UITableViewDelegate {
 
 	func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
 
-		// TODO: We could make this better by making a protocol out of it.
+		guard let svgCell = cell as? SVGCell,
+			let section = Section(rawValue: indexPath.section) else {
+				return
+		}
 
-		if let macawCell = cell as? MacawSVGCell {
-			macawCell.configure(for: "insurance")
-		} else if let swiftSVGCell = cell as? SwiftSVGCell {
-			swiftSVGCell.configure(for: "insurance")
-		} else if let macawRemoteCell = cell as? MacawRemoteSVGCell {
+		let oddRow = (indexPath.row % 2) != 0
 
-			let url = "https://dev.w3.org/SVG/tools/svgweb/samples/svg-files/adobe.svg"
-			macawRemoteCell.configure(for: url)
+		switch section {
+		case .macaw, .swiftSVG:
+			svgCell.configure(for: "insurance")
+
+		case .macawRemote:
+
+			let url: String
+
+			if oddRow {
+				url = "https://dev.w3.org/SVG/tools/svgweb/samples/svg-files/adobe.svg"
+			} else {
+				url = "https://dev.w3.org/SVG/tools/svgweb/samples/svg-files/betterplace.svg"
+			}
+
+			svgCell.configure(for: url)
 		}
 	}
 
