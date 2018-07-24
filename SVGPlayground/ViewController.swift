@@ -142,7 +142,7 @@ extension ViewController: UITableViewDelegate {
 			swiftSVGCell.configure(for: "insurance")
 		} else if let macawRemoteCell = cell as? MacawRemoteSVGCell {
 
-			let url = "http://cdn.shopify.com/s/files/1/0496/1029/files/Freesample.svg"
+			let url = "https://dev.w3.org/SVG/tools/svgweb/samples/svg-files/adobe.svg"
 			macawRemoteCell.configure(for: url)
 		}
 	}
